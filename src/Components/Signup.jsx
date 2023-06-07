@@ -1,43 +1,40 @@
 import React from "react";
 import {useState} from "react";
 import {Link} from 'react-router-dom'
-import {signInWithEmailAndPassword} from "firebase/auth";
+import {createUserWithEmailAndPassword} from "firebase/auth";
 import {auth} from './firebase-config';
 
 
-export default function Login() {
-    const [LoginEmail, setaLoginEmail] = useState("");
-    const [LoginPassword, setLoginPassword] = useState("");
-    const [sk, setsk] = useState("");
+export default function Signup() {
 
+    const [Email, setEmail] = useState("");
+    const [Password, setPassword] = useState("");
+    const [sy, setsy] = useState("");
+    
 
-   
-
-    const login = async (event) => {
+    const signup = async (event) => {
         event.preventDefault();
-        signInWithEmailAndPassword(auth, LoginEmail, LoginPassword).then((userCredential) => { // Signed in
+        createUserWithEmailAndPassword(auth, Email, Password).then((userCredential) => { // Signed in
             const user = userCredential.user;
-            alert("user signed in successfully")
-            // ...
+            alert("user signed up successfully")
         }).catch((error) => {
             const errorCode = error.code;
-            setsk(errorCode);
+            setsy(errorCode);
         });
-        
     };
 
     return (
         <div className="mt-36">
-        
-            <form onSubmit={login}
-                className="mx-auto w-50 mt-5 bg-fuchsia-900 dark:bg-white/10  border border-light border border-3 border-opacity-10 rounded mb-32">
-                <h5 className="text-center m-3 text-white">Log in</h5>
+            
+            <form onSubmit={signup}
+                className=" mx-auto w-50 mt-5 bg-fuchsia-900 dark:bg-white/10 mb-32   border border-dark border border-3 border-opacity-10 rounded">
+                <h5 className="text-center m-3 text-white">Sign up</h5>
                 <div className="m-3">
                     <label className="form-label text-white">Email address</label>
                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                         onChange={
                             (e) => {
-                                setaLoginEmail(e.target.value);
+                                setEmail(e.target.value);
                             }
                         }/>
                 </div>
@@ -46,20 +43,17 @@ export default function Login() {
                 <input type="password" className="form-control" id="exampleInputPassword1"
                     onChange={
                         (e) => {
-                            setLoginPassword(e.target.value);
+                            setPassword(e.target.value);
                         }
                     }/>
             </div>
-            <p className="m-3">
-            <Link to="/forgetpassword" className="nav-link text-warning">Forget Password</Link>
-        </p>
         <p className="m-3 text-warning">
-            {sk} </p>
-        <p className="m-3 text-white">If you don't have an account :
-            <Link to="/signup" className="nav-link text-warning">Sign up</Link>
+            {sy} </p>
+        <p className="m-3 text-white">If you have an account :
+            <Link to="/login" className="nav-link text-warning">Log in</Link>
         </p>
         <button type="submit" className="btn btn-dark m-3 hover:bg-blue-900 dark:hover:bg-fuchsia-900"
-            onClick={login}>Log in</button>
+            onClick={signup}>Sign up</button>
     </form>
     <div className="bg-gradient-to-r from-zinc-900 via-pink-900 to-zinc-900 border border-light border  border-opacity-10 fixed-bottom" >
         <div className="w-20 mx-auto ">
