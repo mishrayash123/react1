@@ -7,7 +7,7 @@ import { auth,db } from "./firebase-config";
 
 
 
-const NavBar =({setfav}) => {
+const NavBar =() => {
   const [isOpen, setIsOpen] = useState(false);
   const [ya, setya] = useState(false);
   const [st, setst] = useState("");
