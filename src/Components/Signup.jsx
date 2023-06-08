@@ -62,7 +62,7 @@ export default function Signup() {
 </svg></a>
       </div>
       <div className="mb-1">
-    <h5 className=" text-center text-light mt-1 mb-1 italic ">Copyright © 2022 • Yash Kumar Mishra</h5>
+    <h5 className=" text-center text-light mt-1 mb-1 italic ">Copyright © 2023 • Yash Kumar Mishra</h5>
       </div>
       
   </div>

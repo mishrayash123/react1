@@ -5,23 +5,24 @@ import {collection, query, orderBy, onSnapshot} from "firebase/firestore"
 import {db} from './firebase-config'
 import AddTask from './AddTask'
 
-function TaskManager() {
+function TaskManager({uid}) {
 
   const [openAddModal, setOpenAddModal] = useState(false)
   const [tasks, setTasks] = useState([])
   const [date, setdate] = useState("")
 
-  /* function to get all tasks from firestore in realtime */ 
   useEffect(() => {
-    const taskColRef = query(collection(db, 'tasks'), orderBy('created', 'desc'))
+    const taskColRef = query(collection(db,uid), orderBy('created', 'desc'))
     onSnapshot(taskColRef, (snapshot) => {
       setTasks(snapshot.docs.map(doc => ({
         id: doc.id,
         data: doc.data()
-      })))
+      })
+      ))
     })
-  },[])
+}, []);
 
+ 
   const filt= async () => {
     setTasks(tasks.filter(e=>e.data.Duedate==date));
   }
@@ -53,6 +54,7 @@ function TaskManager() {
               Created={task.data.created}
               duedate={task.data.Duedate}
               filterdate={date}
+              uid={uid}
             />
           ))}
 

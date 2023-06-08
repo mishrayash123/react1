@@ -6,10 +6,28 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Forgetpassword from "./components/Forgetpassword"
 import TaskManager from "./components/TaskManager"
+import {useEffect,useState} from "react";
+import {onAuthStateChanged} from "firebase/auth";
+import {auth} from "./components/firebase-config";
 
 
 function App() {
+    const [showdata, setshowdata] = useState(false);
+    const [uid, setuid] = useState("hfhjgvhb");
 
+    useEffect(() => {
+      onAuthStateChanged(auth, (user) => {
+          if (user) {
+              setshowdata(true);
+              setuid(user.uid)
+              
+          } else {
+              setshowdata(false);
+             setuid("")
+          }
+      });
+  
+  }, [auth.currentUser]);
 
     return (
 
@@ -18,7 +36,12 @@ function App() {
                 <NavBar/>
                 <Routes>
                 <Route path="/"
-                        element={<TaskManager/>}/>
+                        element={
+                            <>{
+                                showdata ? <TaskManager uid={uid}/> : <Login />
+                            }
+                            </>
+                        }/>
                     <Route path="/login"
                         element={<Login/>}/>
                     <Route path="/signup"
