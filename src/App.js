@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar"
 import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Forgetpassword from "./components/Forgetpassword"
+import TaskManager from "./components/TaskManager"
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
             <BrowserRouter>
                 <NavBar/>
                 <Routes>
+                <Route path="/"
+                        element={<TaskManager/>}/>
                     <Route path="/login"
                         element={<Login/>}/>
                     <Route path="/signup"

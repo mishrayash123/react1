@@ -50,7 +50,7 @@ const logout = async () => {
                   alt="Workflow"
                 /> */}
               </div>
-                <a className="text-white underline decoration-wavy decoration-4 italic text-2xl mb-2" href="/">Freci</a>
+                <a className="text-white underline decoration-wavy decoration-4 italic text-2xl mb-2" href="/">Task-Management</a>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                 <Link to="/" className=" hover:bg-blue-900 dark:hover:bg-fuchsia-900 text-white  px-3 py-2 rounded-md text-sm font-medium">
@@ -61,9 +61,7 @@ const logout = async () => {
             </div>
             <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-2">
-                                <Link to="/fav" className=" hover:bg-blue-900 dark:hover:bg-fuchsia-900 text-white px-3 py-2 rounded-md text-sm font-medium">
-                                Favourites
-                                </Link>
+                                
                                 <> {
                                     ya ? (
 
@@ -140,11 +138,6 @@ const logout = async () => {
               <Link to="/" className="hover:bg-blue-900 dark:hover:bg-fuchsia-900 text-white block px-3 py-2 rounded-md text-base font-medium">
                                     Home
                                 </Link>
-                                
-                                <Link to="/fav" className="hover:bg-blue-900 dark:hover:bg-fuchsia-900 text-white block px-3 py-2 rounded-md text-base font-medium">
-                                Favourites
-                                </Link>
-                                
                                 <> {
                                     ya ? (
 
