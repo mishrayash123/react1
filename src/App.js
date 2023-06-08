@@ -1,7 +1,7 @@
 import React from "react";
 import './index.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import NavBar from "./components/NavBar"
+import Navbar from "./components/Navbar"
 import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Forgetpassword from "./components/Forgetpassword"
@@ -33,7 +33,7 @@ function App() {
 
         <div className="bg-gray-50 dark:bg-neutral-700">
             <BrowserRouter>
-                <NavBar/>
+                <Navbar/>
                 <Routes>
                 <Route path="/"
                         element={

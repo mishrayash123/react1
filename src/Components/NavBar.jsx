@@ -7,7 +7,7 @@ import { auth,db } from "./firebase-config";
 
 
 
-const NavBar =() => {
+const Navbar =() => {
   const [isOpen, setIsOpen] = useState(false);
   const [ya, setya] = useState(false);
   const [st, setst] = useState("");
@@ -159,4 +159,4 @@ const logout = async () => {
   );
 }
 
-export default NavBar;
+export default Navbar;
