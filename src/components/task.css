@@ -2,7 +2,7 @@
     width: 100%;
     padding: 15px 20px;
     border-left: 4px solid hsl(210, 10%, 75%);
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     max-width: 700px;
     margin: 0 auto;
     display: flex;
@@ -10,11 +10,12 @@
     align-items: center;
     box-sizing: border-box;
     margin-bottom:100px ;
+    box-shadow: 0 6px 18px -9px hsl(0, 94%, 45%);
   }
   
   .task--borderColor{
     border-color: green;
-    box-shadow: 0 6px 18px -9px hsl(210, 15%, 65%);
+    box-shadow: 0 6px 18px -9px hsl(122, 100%, 36%);
   }
   
   .task__body {
@@ -73,12 +74,12 @@
   }
   
   .task__buttons > button {
-    background-color: hsl(210, 70%, 60%);
+    background-color: hsl(303, 52%, 8%);
     padding: 5px 10px;
     font-size: 16px;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: rgb(246, 246, 246);
   }
   
   .task__buttons > button:hover {
@@ -94,15 +95,15 @@
     background-color: transparent;
     border: none;
     font-size: 16px;
-    color: hsl(210, 10%, 55%);
+    color: hsl(353, 100%, 41%);
   }
   
   .task__editButton:hover {
-    color: hsl(210, 20%, 25%);
+    color: hsl(240, 75%, 8%);
   }
   
   .task__editButton:active {
-    color: hsl(210, 10%, 55%);
+    color: hsl(212, 66%, 6%);
   }
   
   .task__deleteNedit .task__deleteButton {
